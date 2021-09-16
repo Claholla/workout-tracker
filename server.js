@@ -12,8 +12,9 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dbWorkout", {
   useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
 });
 
 // routes
