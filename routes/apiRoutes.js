@@ -14,7 +14,7 @@ router.post("/api/workouts", ({ body }, res) => {
 
 router.get("/api/workouts", (req, res) => {
   Workout.aggregate([
-      { $addFields: { totalTime: { $sum: "exercises.duration"}}}
+      { $addFields: { totalDuration: { $sum: "$exercises.duration"}}}
   ])
     .then(dbWorkout => {
       res.json(dbWorkout);
@@ -26,10 +26,11 @@ router.get("/api/workouts", (req, res) => {
 
 router.get("/api/workouts/range", (req, res) => {
     Workout.aggregate([
-        { $addFields: { totalDuration: { $sum: "exercises.duration" }}}
+        { $addFields: { totalDuration: { $sum: "$exercises.duration" }}}
     ])
-    .sort({ _id: 1 })
+    .sort({ _id: -1 })
     .limit(7)
+    .sort({ _id: 1})
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
@@ -41,7 +42,7 @@ router.get("/api/workouts/range", (req, res) => {
 router.put("/api/workouts/:id", (req, res) => {
     Workout.findByIdAndUpdate(
         { _id: req.params.id },
-        { exercises: req.body}
+        { $addToSet: { exercises: [req.body] } }
     )
     .then(dbWorkout => {
       res.json(dbWorkout);
