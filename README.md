@@ -2,16 +2,20 @@
   # Workout Tracker
   
   ## Description
-
-  This application allows the user to track workouts and includes options for both resistance and cardio training. The stats page aggregates weight and workout duration totals to track progress from day to day. This page allows the user to view up to the previous 7 days' workouts simultaniously to view progress they've made over time.
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  
+  This application allows the user to track workouts and includes options for both resistance and cardio training. The stats page aggregates weight and workout duration totals to track progress from day to day. This page allows the user to view up to the previous 7 days' workouts simultaniously to view progress they've made over time.
+
+  ## Deployed Application
+  ![workout-tracker-screenshot](https://user-images.githubusercontent.com/80665978/133908495-53060e4a-c47e-491a-aeb6-9a7e6156b7bb.png)
+
+  https://pacific-gorge-46300.herokuapp.com/
 
   ## Table of Contents
 
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contributing](#contributing)
-  - [Tests](#tests)
   - [License](#license)
   - [Questions](#questions)
 
@@ -26,10 +30,6 @@
   ## Contributing
 
   For inquiries about contributing to this project, contact the creator via the info in the "Questions" section of this README.
-
-  ## Tests
-
-  N/A
 
   ## License
 
